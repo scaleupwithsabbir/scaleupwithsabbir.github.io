@@ -45,7 +45,7 @@ export default function Hero() {
                 <img 
   src="https://raw.githubusercontent.com/scaleupwithsabbir/Media-files-/19f44e4a954bad07b4293d96aba8fca23b00652a/Image%202.jpeg" 
   alt="Sabbir Rifat" 
-  className="relative z-10 w-full h-full object-cover rounded-2xl shadow-2xl min-h-[300px] lg:min-h-[500px]"
+  className="relative z-10 w-full h-full object-contain max-h-[600px] lg:max-h-[700px] rounded-2xl"
 />
               </div>
             </div>

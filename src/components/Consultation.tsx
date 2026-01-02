@@ -35,7 +35,7 @@ export default function Consultation() {
                     <Clock className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-2">15-Minute Sessions</h3>
+                    <h3 className="font-bold text-gray-900 mb-2">20-Minute Sessions</h3>
                     <p className="text-gray-600">Focused discussion on your specific needs</p>
                   </div>
                 </div>
@@ -48,23 +48,25 @@ export default function Consultation() {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-2">Video Conference</h3>
-                    <p className="text-gray-600">Connect via Zoom, Google Meet, or Teams</p>
+                    <p className="text-gray-600">Connect via Google Meet</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 flex items-center justify-center border border-gray-200/50">
-              <div className="text-center space-y-6">
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-pink-500 rounded-full mx-auto opacity-20"></div>
-                <div className="space-y-3">
-                  <div className="h-4 bg-gradient-to-r from-blue-300 to-pink-300 rounded-full w-48 mx-auto opacity-40"></div>
-                  <div className="h-4 bg-gradient-to-r from-green-300 to-blue-300 rounded-full w-32 mx-auto opacity-40"></div>
-                  <div className="h-4 bg-gradient-to-r from-pink-300 to-green-300 rounded-full w-40 mx-auto opacity-40"></div>
-                </div>
-                <p className="text-sm text-gray-500 font-medium">Calendar Integration Placeholder</p>
-              </div>
+            {/* Calendly Integration Start */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200/50 h-[700px]">
+              <iframe
+                src="https://calendly.com/scaleupwithsabbir/new-meeting?hide_landing_page_details=1&hide_gdpr_banner=1"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                title="Select a Date & Time"
+                className="w-full h-full"
+              ></iframe>
             </div>
+            {/* Calendly Integration End */}
+
           </div>
 
           <div className="bg-gradient-to-r from-blue-50 via-pink-50 to-green-50 rounded-xl p-8 border border-blue-200/50 hover:shadow-lg transition-all duration-300 group cursor-pointer">

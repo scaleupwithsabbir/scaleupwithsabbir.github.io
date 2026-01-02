@@ -43,10 +43,10 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-200/40 via-pink-200/40 to-green-200/40 rounded-3xl backdrop-blur-sm"></div>
               <div className="absolute inset-8 bg-white/60 backdrop-blur-md rounded-2xl border border-white/80 shadow-xl overflow-hidden group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-300">
                 <img
-                  src="https://raw.githubusercontent.com/scaleupwithsabbir/Media-files-/19f44e4a954bad07b4293d96aba8fca23b00652a/Image%202.jpeg"
-                  alt="Sabbir Rifat"
-                  className="w-full h-full object-cover"
-                />
+  src="https://raw.githubusercontent.com/scaleupwithsabbir/Media-files-/19f44e4a954bad07b4293d96aba8fca23b00652a/Image%202.jpeg"
+  alt="Sabbir Rifat"
+  className="w-full h-full object-contain rounded-2xl"
+/>
               </div>
             </div>
           </div>

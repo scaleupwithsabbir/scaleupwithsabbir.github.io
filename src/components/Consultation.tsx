@@ -2,9 +2,9 @@ import { Calendar, Clock, Video, Mail } from 'lucide-react';
 
 export default function Consultation() {
   return (
-    <section id="consult" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-pink-50/30 to-green-50/50">
+    <section id="consult" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-pink-50/30 to-green-50/50">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Ready to Solve Your Data Problems?
           </h2>
@@ -14,7 +14,7 @@ export default function Consultation() {
           </p>
         </div>
 
-        <div className="bg-white/60 backdrop-blur-md rounded-2xl border border-gray-200/50 shadow-xl p-8 sm:p-12">
+        <div className="bg-white/60 backdrop-blur-md rounded-2xl border border-gray-200/50 shadow-xl p-4 sm:p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="space-y-6">
               <div className="group bg-white/40 backdrop-blur-sm rounded-lg p-6 border border-gray-200/30 hover:bg-white hover:shadow-lg hover:-translate-y-2 transition-all duration-300 cursor-pointer">
@@ -55,7 +55,8 @@ export default function Consultation() {
             </div>
 
             {/* Calendly Integration Start */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200/50 h-[700px]">
+            {/* UPDATED: h-[500px] on mobile, h-[700px] on tablet/desktop */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-200/50 h-[500px] sm:h-[700px]">
               <iframe
                 src="https://calendly.com/scaleupwithsabbir/new-meeting?hide_landing_page_details=1&hide_gdpr_banner=1"
                 width="100%"
@@ -81,7 +82,7 @@ export default function Consultation() {
                 </p>
                 <a
                   href="mailto:scaleupwithsabbir@gmail.com"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-500 to-pink-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-500 to-pink-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 break-all sm:break-normal"
                 >
                   scaleupwithsabbir@gmail.com
                 </a>

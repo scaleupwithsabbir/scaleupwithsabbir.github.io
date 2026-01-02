@@ -4,14 +4,13 @@ export default function Portfolio() {
   const projects = [
     {
       icon: Database,
-      title: 'Unified Data Lake for Brain Feed Ltd',
-      description: 'Integrated GA4 with BigQuery to create a centralized data warehouse, enabling real-time analytics and custom reporting for multi-channel marketing campaigns.',
-      gradient: 'from-blue-500 to-cyan-500',
+      title: "Created 1%er insight for Brain Feed Ltd",
+description: "Integrated GA4 with Shopify analytics, Meta ads manager, mailchimp, Amazon AWS to google looker studio report by creating a centralized data warehouse, enabling real-time analytics and custom reporting for multi-channel marketing campaigns.",      gradient: 'from-blue-500 to-cyan-500',
       bgGradient: 'from-blue-50 to-cyan-50'
     },
     {
       icon: TrendingUp,
-      title: 'Market Expansion Strategy for Qi Europe',
+      title: "Analyzed Business for Qi Europe Ltd.",
       description: 'Conducted comprehensive feasibility study and risk assessment for European market entry, including competitor analysis, demand forecasting, and financial modeling.',
       gradient: 'from-pink-500 to-rose-500',
       bgGradient: 'from-pink-50 to-rose-50'

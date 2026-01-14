@@ -1,4 +1,4 @@
-import { BarChart3, Brain, Globe } from 'lucide-react';
+import { BarChart3, Brain } from 'lucide-react';
 
 export default function Services() {
   const services = [
@@ -19,15 +19,6 @@ export default function Services() {
       gradient: 'from-pink-500/10 to-pink-600/10',
       borderColor: 'border-pink-200/50',
       iconColor: 'text-pink-600'
-    },
-    {
-      icon: Globe,
-      title: 'Erasmus Traineeship & Career Consulting',
-      target: 'Students, Interns, EYE Applicants',
-      description: 'Securing an opportunity in Europe can be overwhelming. Drawing from my experience across multiple countries, I help you navigate the Erasmus+ ecosystem, EYE program, and internships to land the right placement.',
-      gradient: 'from-green-500/10 to-green-600/10',
-      borderColor: 'border-green-200/50',
-      iconColor: 'text-green-600'
     }
   ];
 
@@ -42,7 +33,8 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* UPDATED: Centered the grid and limited it to 2 columns (max-w-5xl) */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (

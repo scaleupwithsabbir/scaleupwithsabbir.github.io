@@ -1,5 +1,6 @@
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
+import ImpactStrip from './components/ImpactStrip';
 import About from './components/About';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
@@ -11,6 +12,7 @@ function App() {
     <div className="min-h-screen bg-white">
       <Navigation />
       <Hero />
+      <ImpactStrip />
       <About />
       <Services />
       <Portfolio />

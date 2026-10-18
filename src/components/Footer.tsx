@@ -2,12 +2,13 @@ import { Linkedin, Github, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <footer className="relative bg-ink text-white py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <span className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-brand-700 via-brand-500 to-teal-500" aria-hidden="true" />
+      <div className="relative max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-2xl font-bold mb-4">Sabbir Rifat</h3>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-slate-400 leading-relaxed">
               Quantitative Researcher & Digital Marketing Analyst helping businesses and researchers find clarity in the noise.
             </p>
           </div>
@@ -18,7 +19,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-teal-300 transition-colors"
                 >
                   About
                 </button>
@@ -26,7 +27,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-teal-300 transition-colors"
                 >
                   Services
                 </button>
@@ -34,7 +35,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-teal-300 transition-colors"
                 >
                   Portfolio
                 </button>
@@ -42,7 +43,7 @@ export default function Footer() {
               <li>
                 <button
                   onClick={() => document.getElementById('consult')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-slate-400 hover:text-teal-300 transition-colors"
                 >
                   Consult
                 </button>
@@ -55,9 +56,9 @@ export default function Footer() {
             <div className="space-y-4">
               <a
                 href="mailto:scaleupwithsabbir@gmail.com"
-                className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-slate-400 hover:text-teal-300 transition-colors group"
               >
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-gray-700 transition-colors">
+                <div className="w-10 h-10 bg-white/5 ring-1 ring-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/10 transition-colors">
                   <Mail size={20} />
                 </div>
                 <span className="text-sm">scaleupwithsabbir@gmail.com</span>
@@ -67,9 +68,9 @@ export default function Footer() {
                 href="https://linkedin.com/in/aemsabbirrifat"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-slate-400 hover:text-teal-300 transition-colors group"
               >
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                <div className="w-10 h-10 bg-white/5 ring-1 ring-white/10 rounded-lg flex items-center justify-center group-hover:bg-brand-600 transition-colors">
                   <Linkedin size={20} />
                 </div>
                 <span className="text-sm">LinkedIn Profile</span>
@@ -79,9 +80,9 @@ export default function Footer() {
                 href="https://github.com/AEMSabbirRifat"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
+                className="flex items-center gap-3 text-slate-400 hover:text-teal-300 transition-colors group"
               >
-                <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-gray-700 transition-colors">
+                <div className="w-10 h-10 bg-white/5 ring-1 ring-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/10 transition-colors">
                   <Github size={20} />
                 </div>
                 <span className="text-sm">GitHub Profile</span>
@@ -90,8 +91,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center">
-          <p className="text-gray-400">
+        <div className="border-t border-white/10 pt-8 text-center">
+          <p className="text-slate-400">
             &copy; 2026 A E M Sabbir Rifat. All rights reserved.
           </p>
         </div>

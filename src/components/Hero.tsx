@@ -106,14 +106,6 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Live status pill */}
-              <div className="hidden sm:flex absolute z-20 top-4 right-6 items-center gap-2 bg-white/95 border border-slate-200 rounded-full pl-2.5 pr-3 py-1 shadow-md">
-                <span className="relative flex w-2 h-2">
-                  <span className="absolute inset-0 rounded-full bg-teal-500 animate-pulseDot" />
-                  <span className="relative w-2 h-2 rounded-full bg-teal-500" />
-                </span>
-                <span className="text-[11px] font-semibold text-slate-700">Open to opportunities</span>
-              </div>
             </div>
           </div>
 

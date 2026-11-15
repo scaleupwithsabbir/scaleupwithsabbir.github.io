@@ -56,7 +56,7 @@ export default function About() {
           <div className="relative bg-white rounded-2xl border border-slate-200 shadow-[0_18px_40px_-28px_rgba(14,24,56,0.4)] p-8 sm:p-12 mb-12 hover:shadow-[0_24px_50px_-28px_rgba(14,24,56,0.5)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
             <span className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-brand-700 to-teal-500" aria-hidden="true" />
             <p className="text-lg text-slate-700 leading-relaxed">
-              I am a <span className="font-semibold text-ink">Quantitative Data Analyst and Researcher</span> based in Germany with experience across Asia, Europe, and the UK. I bridge the gap between messy raw data and actionable business strategy.
+              I am a <span className="font-semibold text-ink">Business and Growth Analyst</span> based in Germany with experience across Asia, Europe, and the UK. I bridge the gap between messy raw data and actionable business strategy.
             </p>
           </div>
         </Reveal>

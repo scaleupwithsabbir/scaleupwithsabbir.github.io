@@ -82,7 +82,7 @@ export default function Consultation() {
               <div>
                 <h3 className="font-bold text-white mb-3 text-lg">Prefer Email?</h3>
                 <p className="text-brand-100/80 mb-4 leading-relaxed">
-                  Send me a message and I'll get back to you within 24 hours
+                  Send me a message and I'll get back to you within 1 hour
                 </p>
                 <a
                   href="mailto:scaleupwithsabbir@gmail.com"

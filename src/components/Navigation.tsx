@@ -51,6 +51,9 @@ export default function Navigation() {
             <button onClick={() => scrollToSection('portfolio')} className={linkClass}>
               Portfolio
             </button>
+            <button onClick={() => scrollToSection('projects')} className={linkClass}>
+              Projects
+            </button>
             <button onClick={() => scrollToSection('consult')} className={linkClass}>
               Consult
             </button>
@@ -89,6 +92,7 @@ export default function Navigation() {
               ['about', 'About'],
               ['services', 'Services'],
               ['portfolio', 'Portfolio'],
+              ['projects', 'Projects'],
               ['consult', 'Consult'],
             ].map(([id, label]) => (
               <button

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect, useState, type ComponentType, type LazyExoticComponent } from 'react';
+import { Component, lazy, Suspense, useCallback, useEffect, useState, type ComponentType, type LazyExoticComponent, type ReactNode } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { ChartDivider, Eyebrow, Reveal } from './ui';
 import { q02 } from '../case-study/data';
@@ -19,6 +19,48 @@ function BerlinThumb() {
   );
 }
 
+/** Thumbnail for the retail project: the revenue concentration curve (values from results/03_revenue_concentration.csv). */
+function RetailThumb() {
+  const pts: [number, number][] = [[0, 0], [1, 30.1], [5, 48.7], [10, 60.0], [20, 73.7], [50, 91.9], [100, 100]];
+  const path = pts.map(([x, y]) => `${10 + x * 0.76},${60 - y * 0.48}`).join(' ');
+  return (
+    <svg viewBox="0 0 96 72" className="w-full h-full" role="img" aria-label="Curve thumbnail: a few customers bring most of the revenue">
+      <rect width="96" height="72" rx="10" fill="#EEF3FF" />
+      <polygon points={`10,60 ${path} 86,60`} fill="#8BAAF7" opacity="0.45" />
+      <line x1="10" y1="60" x2="86" y2="12" stroke="#94A3B8" strokeWidth="1" strokeDasharray="3 3" />
+      <polyline points={path} fill="none" stroke="#1C38A3" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
+      <rect x="8" y="60" width="80" height="1" fill="#B9CDFC" />
+    </svg>
+  );
+}
+
+/** Thumbnail for the bank project: each year's share of calls (left) and of sales (right), from results/02_by_year.csv. */
+function BankThumb() {
+  const rows: [number, number][] = [[73.3, 28.9], [23.0, 48.0], [3.7, 23.1]];
+  return (
+    <svg viewBox="0 0 96 72" className="w-full h-full" role="img" aria-label="Mirrored bar thumbnail: most calls were made in the year with the fewest sales">
+      <rect width="96" height="72" rx="10" fill="#EEF3FF" />
+      {rows.map(([calls, sales], i) => (
+        <g key={i}>
+          <rect x={47 - calls * 0.48} y={15 + i * 16} width={calls * 0.48} height="10" rx="2" fill="#EB6834" />
+          <rect x="49" y={15 + i * 16} width={sales * 0.48} height="10" rx="2" fill="#1C38A3" />
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+/** Keeps a fault inside one project from taking the rest of the page down. */
+class DrawerBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  render() {
+    return this.state.failed ? <p className="px-4 sm:px-8 py-8 text-slate-600">This project could not be loaded. Please reload the page.</p> : this.props.children;
+  }
+}
+
 type Project = {
   id: string;
   title: string;
@@ -37,6 +79,22 @@ const projects: Project[] = [
     tags: ['Marketplace analytics', 'SQL', 'Tableau / Power BI', 'Berlin', 'Germany'],
     Thumb: BerlinThumb,
     Body: lazy(() => import('../case-study/BerlinCaseStudy')),
+  },
+  {
+    id: 'retail-revenue-concentration',
+    title: "Forty accounts bring in 29% of a UK gift retailer's revenue. Where should growth come from next?",
+    summary: 'A business intelligence story on 541,909 invoice lines: the problem, six interactive views, what was tried, three sized options and a scored recommendation.',
+    tags: ['Business intelligence', 'SQL', 'Tableau / Power BI', 'Retail', 'United Kingdom'],
+    Thumb: RetailThumb,
+    Body: lazy(() => import('../case-study/RetailCaseStudy')),
+  },
+  {
+    id: 'bank-campaign-calls',
+    title: 'A bank made 23 calls for every deposit it sold. Where should the next campaign spend its calls?',
+    summary: 'A performance marketing story on 41,188 campaign contacts: the problem, six interactive views, what was tried, three sized options and a scored recommendation.',
+    tags: ['Performance marketing', 'Growth analytics', 'SQL', 'Tableau / Power BI', 'Banking'],
+    Thumb: BankThumb,
+    Body: lazy(() => import('../case-study/BankCaseStudy')),
   },
 ];
 
@@ -125,9 +183,11 @@ export default function Projects() {
                     <div className="overflow-hidden min-h-0" ref={(el) => el?.toggleAttribute('inert', !isOpen)}>
                       <div className="border-t border-slate-200">
                         {loaded.includes(p.id) && (
-                          <Suspense fallback={<p className="p-8 text-slate-500">Loading the project…</p>}>
-                            <p.Body />
-                          </Suspense>
+                          <DrawerBoundary>
+                            <Suspense fallback={<p className="p-8 text-slate-500">Loading the project…</p>}>
+                              <p.Body />
+                            </Suspense>
+                          </DrawerBoundary>
                         )}
                         <div className="px-4 sm:px-8 pb-6 bg-white">
                           <button type="button" onClick={() => toggle(p.id)} className="text-sm font-bold text-brand-700 hover:text-brand-900">

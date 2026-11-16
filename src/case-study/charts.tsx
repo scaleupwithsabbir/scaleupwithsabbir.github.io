@@ -95,7 +95,7 @@ export function ChartCard({
 /* ---------- Shared pieces ---------- */
 
 /** Hover / keyboard-focus detail. Sits inside an element with the classes `group relative`. */
-function Tip({ children }: { children: ReactNode }) {
+export function Tip({ children }: { children: ReactNode }) {
   const ref = useRef<HTMLSpanElement>(null);
   useEffect(() => {
     const el = ref.current;
@@ -130,7 +130,7 @@ function Tip({ children }: { children: ReactNode }) {
   );
 }
 
-const TipLine = ({ value, label }: { value: string; label: string }) => (
+export const TipLine = ({ value, label }: { value: string; label: string }) => (
   <span className="block">
     <span className="font-bold">{value}</span>
     <span className="text-slate-300"> · {label}</span>
@@ -425,6 +425,7 @@ export function Bubbles({
   fx,
   fy,
   sizeLabel,
+  yTipLabel = 'from hosts with 5+ listings',
 }: {
   points: Bubble[];
   xDomain: [number, number];
@@ -436,6 +437,7 @@ export function Bubbles({
   fx: (v: number) => string;
   fy: (v: number) => string;
   sizeLabel: string;
+  yTipLabel?: string;
 }) {
   const px = (v: number) => ((v - xDomain[0]) / (xDomain[1] - xDomain[0])) * 100;
   const py = (v: number) => ((v - yDomain[0]) / (yDomain[1] - yDomain[0])) * 100;
@@ -479,7 +481,7 @@ export function Bubbles({
               <Tip>
                 <span className="block font-bold mb-0.5">{p.name}</span>
                 <TipLine value={fx(p.x)} label={xTitle.toLowerCase()} />
-                <TipLine value={fy(p.y)} label="from hosts with 5+ listings" />
+                <TipLine value={fy(p.y)} label={yTipLabel} />
                 <TipLine value={fmt(p.size)} label={sizeLabel} />
               </Tip>
             </span>

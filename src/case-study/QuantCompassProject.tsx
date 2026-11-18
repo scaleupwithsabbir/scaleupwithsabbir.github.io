@@ -7,6 +7,8 @@ import { A } from './Story';
 const REPO_URL = 'https://github.com/AEMSabbirRifat/QuantCompass-Local';
 const ZIP_URL = 'https://github.com/AEMSabbirRifat/QuantCompass-Local/archive/refs/heads/main.zip';
 
+const steps = ['Data & codebook', 'Hypotheses & variables', 'Prepare data', 'Describe & reliability', 'Assumption checks', 'Results & report'];
+
 const failed = [
   { who: 'SPSS, Stata and similar packages', what: 'Paid licences and a steep menu maze. Click a button, get a table, and no script to show how it was made.' },
   { who: 'Copied R or Python code', what: 'It runs, but the assumptions are skipped, and the student cannot explain a line of it to a supervisor.' },
@@ -132,6 +134,19 @@ export default function QuantCompassProject() {
                 </div>
               </div>
             </div>
+          </Reveal>
+
+          {/* Six steps */}
+          <Reveal className="mt-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700 mb-3">Six clicks-only steps</p>
+            <ol className="flex flex-wrap gap-2">
+              {steps.map((s, i) => (
+                <li key={s} className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-2 text-sm font-semibold text-slate-700">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-700 text-xs font-bold text-white tabular">{i + 1}</span>
+                  {s}
+                </li>
+              ))}
+            </ol>
           </Reveal>
 
           {/* Links */}

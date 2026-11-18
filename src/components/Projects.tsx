@@ -50,29 +50,6 @@ function BankThumb() {
   );
 }
 
-/** Thumbnail for QuantCompass: a compass needle over a small rising bar chart. */
-function QuantCompassThumb() {
-  return (
-    <svg viewBox="0 0 96 72" className="w-full h-full" role="img" aria-label="Thumbnail: a compass over a small bar chart">
-      <defs>
-        <linearGradient id="qc-g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#1A2B63" />
-          <stop offset="1" stopColor="#2347C8" />
-        </linearGradient>
-      </defs>
-      <rect width="96" height="72" rx="10" fill="url(#qc-g)" />
-      <rect x="14" y="46" width="8" height="12" rx="1.5" fill="#5A82EF" />
-      <rect x="26" y="40" width="8" height="18" rx="1.5" fill="#8BAAF7" />
-      <rect x="38" y="33" width="8" height="25" rx="1.5" fill="#B9CDFC" />
-      <circle cx="68" cy="30" r="17" fill="none" stroke="#2DD4BF" strokeWidth="2.5" />
-      <polygon points="68,16 73,31 68,29 63,31" fill="#FFFFFF" />
-      <polygon points="68,44 63,29 68,31 73,29" fill="#EB6834" />
-      <circle cx="68" cy="30" r="2" fill="#0E1838" />
-      <rect x="12" y="58" width="72" height="1.5" fill="#5A82EF" opacity="0.6" />
-    </svg>
-  );
-}
-
 /** Keeps a fault inside one project from taking the rest of the page down. */
 class DrawerBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false };
@@ -118,14 +95,6 @@ const projects: Project[] = [
     tags: ['Performance marketing', 'Growth analytics', 'SQL', 'Tableau / Power BI', 'Banking'],
     Thumb: BankThumb,
     Body: lazy(() => import('../case-study/BankCaseStudy')),
-  },
-  {
-    id: 'quantcompass-statistics-software',
-    title: 'Students lose weeks on survey statistics. QuantCompass guides them through it, and shows its work.',
-    summary: 'Open-source software: upload survey data and hypotheses, get assumption-checked tests, a Word + HTML report and the exact R script. Free, and your data stays on your computer.',
-    tags: ['Open-source software', 'R', 'Quantitative research', 'Statistics', 'Free'],
-    Thumb: QuantCompassThumb,
-    Body: lazy(() => import('../case-study/QuantCompassProject')),
   },
 ];
 

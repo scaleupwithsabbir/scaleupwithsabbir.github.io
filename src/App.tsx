@@ -6,6 +6,7 @@ import About from './components/About';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import Projects from './components/Projects';
+import Software from './components/Software';
 import Consultation from './components/Consultation';
 import Footer from './components/Footer';
 
@@ -25,6 +26,7 @@ function App() {
       <Services />
       <Portfolio />
       <Projects />
+      <Software />
       <Consultation />
       <Footer />
     </div>
